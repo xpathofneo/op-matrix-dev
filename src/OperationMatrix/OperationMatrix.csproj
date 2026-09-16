@@ -13,8 +13,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Features\Orders\" />
-      <Folder Include="Features\Products\" />
       <Folder Include="Infrastructure\Postgres\" />
     </ItemGroup>
 
