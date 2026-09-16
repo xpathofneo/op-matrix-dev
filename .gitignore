@@ -65,3 +65,5 @@ opencode.json
 .opencode.json
 .opencode/
 .opencodeignore
+
+appsettings.Development.json
