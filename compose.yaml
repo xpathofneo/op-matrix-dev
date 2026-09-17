@@ -1,0 +1,22 @@
+﻿services:
+  postgres:
+    image: postgres:18-alpine
+    container_name: op-matrix-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: dbtest
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d dbtest"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      
+volumes:
+  pgdata:
