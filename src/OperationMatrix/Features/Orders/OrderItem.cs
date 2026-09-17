@@ -13,8 +13,8 @@ public class OrderItem
     public int Quantity { get; set; } = 1;
 
     public required decimal Price { get; set; }
-    
-    public Order? Order { get; set; }
+
+    public required Order Order { get; set; }
     
     public Product? Product { get; set; }
 }
