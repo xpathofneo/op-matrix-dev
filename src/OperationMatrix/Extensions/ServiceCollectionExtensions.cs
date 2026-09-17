@@ -1,4 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
+using OperationMatrix.Infrastructure.Postgres;
 
 namespace OperationMatrix.Extensions;
 
@@ -25,6 +27,11 @@ public static class ServiceCollectionExtensions
                 };
                 return Task.CompletedTask;
             });
+        });
+
+        services.AddDbContext<AppDbContext>(options =>
+        {
+            options.UseNpgsql(configuration.GetConnectionString(nameof(AppDbContext)));
         });
         
         return services;
