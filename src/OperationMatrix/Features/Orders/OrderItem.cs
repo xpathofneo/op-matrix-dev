@@ -1,3 +1,5 @@
+using OperationMatrix.Features.Products;
+
 namespace OperationMatrix.Features.Orders;
 
 public class OrderItem
@@ -13,4 +15,6 @@ public class OrderItem
     public required decimal Price { get; set; }
     
     public Order? Order { get; set; }
+    
+    public Product? Product { get; set; }
 }
