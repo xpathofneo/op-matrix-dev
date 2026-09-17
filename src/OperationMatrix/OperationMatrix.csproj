@@ -12,4 +12,9 @@
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.2.3" />
     </ItemGroup>
 
+    <Target Name="CreateAppSettings" BeforeTargets="BeforeBuild" Condition="!Exists('appsettings.Development.json')">
+        <Copy SourceFiles="appsettings.Development.Template.json" DestinationFiles="appsettings.Development.json" />
+        <Message Importance="high" Text="Created local appsettings.Development.json from template. Change password and other information!" />
+    </Target>
+    
 </Project>
