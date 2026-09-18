@@ -33,6 +33,11 @@ public static class ServiceCollectionExtensions
         {
             options.UseNpgsql(configuration.GetConnectionString(nameof(AppDbContext)));
         });
+
+        services.Configure<RouteOptions>(options =>
+        {
+            options.LowercaseUrls = true;
+        });
         
         return services;
     }
