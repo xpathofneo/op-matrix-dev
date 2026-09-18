@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
+using OperationMatrix.Features.Products;
 using OperationMatrix.Infrastructure.Postgres;
 
 namespace OperationMatrix.Extensions;
@@ -9,6 +10,11 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddControllers();
+        
+        services.AddScoped<CreateProductHandler>();                                                                                                                                                                                                                      
+        services.AddScoped<GetProductByIdHandler>();
+        services.AddScoped<UpdateProductHandler>();
+        services.AddScoped<DeleteProductHandler>(); 
 
         services.AddOpenApi(options =>
         {
