@@ -59,3 +59,11 @@ nunit-*.xml
 .idea/
 bin/
 obj/
+
+# OpenCode config
+opencode.json
+.opencode.json
+.opencode/
+.opencodeignore
+
+appsettings.Development.json
